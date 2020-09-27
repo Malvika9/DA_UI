@@ -1,0 +1,111 @@
+
+  *{  
+    margin:0;
+    padding:0;
+    font-family:Lato;
+  }
+  
+  body{
+    padding:0px;
+    background:#f6f3f7 - #111;
+  }
+  
+  .flatTable{  
+    width:100%;
+    min-width:500px;
+    border-collapse:collapse;  
+    font-weight:bold;
+    color:#6b6b6b;
+   
+  }
+
+  .flatTable  tr{
+      height: 50px;
+      background:#f6f3f7 - #222;
+      border-bottom:rgba(0,0,0,.05) 1px solid;
+      cursor: pointer;
+  }
+
+  .flatTable  td{    
+      box-sizing:border-box;
+      padding-left:30px;
+      
+  }
+  
+  .flatTable .titleTr{
+    height:50px;  
+    color:#f6f3f7; 
+    background-color: lightgreen ;  
+    border:0px solid;
+    cursor: initial;
+  }
+
+  .dot{
+  height: 40px;
+  width: 50px;
+  /* border-radius: 100%;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px; */
+  display: inline-block;
+}
+
+.badgecss{
+    font-weight: 500;
+    background-color:darkseagreen;
+    color: darkslategrey;
+}
+  
+  .button{
+    text-align:center;
+    cursor:pointer;
+  }
+  
+  .sForm{
+    position:absolute;
+    top:0;
+    right:-400px;
+    width:400px;
+    height:100%; 
+    background:#f6f3f7 - #222;  
+    overflow:hidden;  
+    transition:width 1s, right .3s;
+    padding:0px;
+    box-sizing:border-box;
+  }
+  .sForm .close{
+      float:right; 
+      height:70px;
+      width:80px;
+      padding-top:25px;    
+      box-sizing:border-box;
+      background:rgba(255,0,0,.4);
+        
+    }
+    
+    .sForm .title{
+      width:100%;
+      height:70px;
+      padding-top:20px;
+      padding-left:20px;
+      box-sizing:border-box;
+      background:rgba(0,0,0,.1);
+    }
+  
+  .open{  
+    right:0;
+    width:400px !important;
+  }
+  
+  
+  
+  .display{
+  
+    width:300px;
+  }
+  
+
+  .openIcon{
+     width:80px; 
+  }
+
