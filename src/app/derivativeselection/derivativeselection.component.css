@@ -1,15 +1,1 @@
 
-@import url('../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
-.modal-backdrop.fade
-{
-  opacity: 0.5;
-}
-.modal-open .modal
-{
-  opacity: 1;
-  position: absolute;
-  top: 90px;
-  right: 100px;
-  bottom: 100px;
-  left: 175px;
-}

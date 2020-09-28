@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { UtilityService } from '../utility.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(public Utility: UtilityService) { }
+  loginButton: boolean = false;
+  FormData:any={};
+  // payload: any;
 
-  ngOnInit(): void {
+  loginButtonClicked() {
+    this.loginButton = !this.loginButton;
+  }
+  ngOnInit(): void { }
+
+  submitted() {
+    this.Utility.login(this.FormData);
+    console.log("submitted");
+    
   }
 
-}
+  }
