@@ -80,9 +80,13 @@ strikeprice(event){
 futureslist : futuresderivatives[] = [];
 
 createFuturesList(){
+
   console.log(this.FuturesData.lotQuantity)
-  console.log(this.futureslist);
+
+  console.log(this.futureslist); //empty
+
   this.futureslist.push(this.FuturesData);
+
   console.log(this.futureslist);
 }
 }
