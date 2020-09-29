@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #064d79;
+    font-family: Courier, monospace;
+    font-size: 14px;
+    color:rgb(255, 253, 253); 
+  }
+  
+  .wrapper {
+    display: block;
+    margin: 5em auto;
+    border: 1px solid rgb(8, 20, 184);
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    top:50%;
+    left:50%;
+  
+  }
+  p{text-align:center;}
+  .label {
+    height: 1em;
+    padding: .3em;
+    background: rgba(177, 8, 8, 0.8);
+    position: absolute;
+    display: none;
+    color:#333;
+    
+  }

@@ -1,11 +1,11 @@
 @import url('../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 .modal-backdrop.fade
 {
-  opacity: 0.5;
+  opacity: 0.1;
 }
 .modal-open .modal
 {
-  opacity: 1;
+  opacity: 0.1;
   position: absolute;
   top: 90px;
   right: 100px;
@@ -20,62 +20,78 @@
   
   body{
     padding:0px;
-    background:#f6f3f7 - #111;
-    /* padding: 2em;
-    font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”; */
-  }
+    background:#f6f3f7;
+    }
 
   
   .flatTable{  
-    width:100%;
+    width:80%;
+    margin-left: 5%;
     min-width:500px;
     border-collapse:collapse;  
     font-weight:bold;
-    color:#6b6b6b;
+    color:#fcfcfc;
    
   }
 
   .flatTable  tr{
-      height: 50px;
-      background:#f6f3f7 - #222;
-      border-bottom:rgba(0,0,0,.05) 1px solid;
+      height: 100px;
+      background:#4e2697;
+      border-bottom:rgba(252, 248, 248, 0.05) 5px solid;
       cursor: pointer;
   }
 
   .flatTable  td{    
       box-sizing:border-box;
-      padding-left:30px;
+      padding-left:50px;
       
   }
   
   .flatTable .titleTr{
     height:50px;  
-    color:#f6f3f7; 
-    background-color: lightgreen ;  
-    border:0px solid;
+    color:#f9f6fa; 
+    background-color: rgb(187, 123, 39) ;  
+    border:10px solid;
     cursor: initial;
+
+  }
+  .btn{
+    text-align:center;
+    margin-top: 12px;
+    cursor:pointer;
+    width: 100%;
+  }
+  .btn:hover {
+    background-color:rgb(57, 56, 58);
+    color: white;
   }
 
   .dot{
   height: 40px;
   width: 50px;
-  /* border-radius: 100%;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px; */
+  border-radius: 100%;
+ 
   display: inline-block;
 }
 
 .badgecss{
-    font-weight: 500;
-    background-color:darkseagreen;
+    font-weight: 800;
+    background-color:rgb(206, 153, 97);
     color: darkslategrey;
 }
   
   .button{
     text-align:center;
     cursor:pointer;
+
   }
+  /* .p-button{
+    text-align:center;
+    cursor:pointer;
+    width: 100%;
+
+  } */
+
   
   .sForm{
     position:absolute;

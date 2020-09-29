@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { StepsModule } from 'primeng/steps';
 import { ToastModule } from 'primeng/toast';
+import { PayoffchartComponent } from './payoffchart/payoffchart.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ToastModule } from 'primeng/toast';
     DerivativeselectionComponent,
     AnalysisComponent,
     MainComponent,
+    PayoffchartComponent,
     // HomePageComponent
   ],
   imports: [
@@ -45,7 +47,7 @@ import { ToastModule } from 'primeng/toast';
     HttpClientModule,
     FormsModule,
     StepsModule,
-    // ToastModule
+    ToastModule
 
   ],
   providers: [],

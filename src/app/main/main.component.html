@@ -1,4 +1,55 @@
-<div class="card">
-    <!-- <p-toast></p-toast> -->
-    <p-steps [model]="items" [readonly]="true"></p-steps>
-</div>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color :lightgreen">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['']" [routerLinkActive]="['active']">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/trades']"
+                        [routerLinkActive]="['active']">Select a company</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/analysis']"
+                        [routerLinkActive]="['active']">Analysis</a>
+                </li>
+
+            </ul>
+            <div>
+                Welcome {{user}}!
+            </div>
+            <div class="ml-1">
+                <a class="nav-item nav-link active" aria-current="page" [routerLink]="['/login']"
+                    [routerLinkActive]="['active']">Log out
+                </a>
+            </div>
+
+        </div>
+    </div>
+</nav> -->
+
+
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="index.html"><span>DERIAN</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a [routerLink] = "['']" >Log out</a></li>
+ 
+        
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <app-companyselection></app-companyselection>

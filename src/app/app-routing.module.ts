@@ -7,6 +7,7 @@ import { DerivativeselectionComponent } from './derivativeselection/derivativese
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { PayoffchartComponent } from './payoffchart/payoffchart.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
     path:"login",component:LoginComponent
   },
   {
-    path:"trades",component:CompanyselectionComponent
+    path:"payoffchart",component:PayoffchartComponent
   },
   {
     path:"derivative",component:DerivativeselectionComponent
@@ -27,6 +28,7 @@ const routes: Routes = [
   {
     path:"main",component:MainComponent
   }
+
 ];
 
 @NgModule({

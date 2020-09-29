@@ -1,35 +1,39 @@
-<button (click)="loginButtonClicked()"><b>LOGIN</b></button>
+<!-- <button (click)="loginButtonClicked()"><b>LOGIN</b></button> -->
+<!-- *ngIf="loginButton" -->
 
-<div class="modal" style="display:block;width:auto" *ngIf="loginButton">
+  <app-landingpage></app-landingpage>
+  <div class="modal" style="display:block;width:500px">
+  
 
-  <form (submit)="submitted()" class="modal-content animate">
-    <div class="imgcontainer">
-      <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close"
-          title="Close Modal">&times;</span> -->
-      <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAyVBMVEUFba5Gt+b///8AKlT/AAAAaqwsk8pIuugAZqsAY6kAYaiWuNX2+/3F2upTjr8Aaawzg7rp8vcDUohAqNUAGEYnYZwAcbSdv9pllsK90+U+ib3I2OgAba31AADk7vXc6fLrDRWuyuAverQgeLRyo8qJrc9qUoORTXqaQWmoNla4LEe+KUHFJTzMIjezL0ujOl2XRnCIT35TVooAZKBDW5LWFiNwTXzKLEbjERu1Nlc2YJneHjDjFyTVHjCePmNeVYjSIjYAWKSAqM0yrQvsAAAGvUlEQVR4nO2baWObNhiAGZs2CR/C2wzYwaEY27lvN23T2///Rw3iGCQhcWQJkdz36ac6IL+PJHSg15YFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAvhSfw1vG8KJnPeHV0fHJ6dn5xcX52eXV9c3u3L5qpxfro9N0fEt6f3I9Dwy0zuw8zmd2Oj59WY2MlPe/h+nOV3ROzD/ehiY6etfraQO+JTw+mNaR3962yc5b5vLIMcvTGVy39Mr7cm+LohVft9baOKxMUvfDmGe234+tae0dv3WJ8kXGl97gaWt9qBGYp1Ve8+66xojdWzn+zHydH39djlDF+WN9fX35RN6O2it69olUub+74xXb4+N/19Q95e34ca+p4Iov2y9XaUszmqefd/ZlMcqbjoOrdXUhCPb2tGThSyZv3khuvtVP07iTbh6tGi2rPupVUzifNFL11ubOdqJqPYvFub/2jdPtZ+OpRt0AieKoaLRBxJy4SC/BWpbH1XCNF70EUfHer6mQkjG27ZJithY5Litp01LLgiWoNjS3ftqWGWTHikKONojjIzFSrEmz1+rbSMK0VccmuyXATCivRr4onkOLNyLYrDFPHlaCoxaThnfFBXSoGCGdxaNs1hmlPFfqDBlO/d82HdKwIiQxsu94wHXCEpe34rUdU75YP6EZV586okWHKOVfg+9eIug3jWTPBFobhh0a9vivChzGL+qlpbphWG8dLh/xatDE0EzA0HzA0H/0N0ZZn36+1IcUEh8k8IwkxodLwKENxAcI7frKGc5J/jqmqlFe2ysFOMlweRIfbbU9/FMWLNL7SZXQYFORNhOb+jqd905bYL9gwKogpJEi60ENOshmwoW01o6VFhIbkFtb+rgboVLy3zAEpSnHYPwxfvytTMp2o4opDvh05w96zDdnafHVDRIZRVWQ97kmRGyKdDXEyUAa1JXKZ2MxrQ2dRevzKbJwaQ33bkFLlA8jh54qGtSFNKp9AhnjnYlYbouRQGU9JkVQZatqGKGwumHZUap4hbtpFH4mqDPXspU4sFTmI/Z4/icQR9jBBVYbuYLKDvbP4dDLpMUuHTgzxoqw3WMypk62SCU4CvgLcp2lfbpguG3bwK28n/5xb43ZhiJLSPBgn7HaCEuoXfwuqx1I2+Ca7py4MsdhHI9cRv4kku9lyWTMfssFrYkhdQdDHku9BZNuV42KQMMaQCGuZJZFfh91RPoxubzTEECWCoKO6koZR32JCMMUQM4NI1guVgtnKblq/e2LQxNDhVjOjsPI7uD8aYoiGXBMuJIGqMMQQ91jBqKKPljDEkBywhkGb93mGGIZsFP02TWiIIeKm+1gxFcoxw5AGrOGi1UtnMwzxhjVMWn2BIYbsfD9qd68hhuy+Imp3MmKGIWEND1pM95Yxhux0uJ+G7NZpsI+G+/8c/gJj6ZIp326XTmaGIb+mGe7hmoZ/B++3GmrMMOTflR7u4d7CItyJhbuH+0P+RdRkD/f4/FDTqhENMbQQd2gxaLEHNsWQ8KcWmypFPvnLFEPhdaI9Vc8YxOeauJ3hVNH/Ozi3cPjz376rUETZGtavzadhS2YNVauJLs6e+LHG7k+lHRXTx5pYtDl7Yl+nb/gLct9Ozg/FQ/weLtU3JUFf7G31hmzB3ESErbxJuzCkwpOYbqOGmAuYOtPcph/uYqs15C7oz/OqwXgxyq/v5ByflBMVoo3lYIrSfxQ7OGBDjRob8ofLUUiyJFnsWMuI6Qrd5GJgWTZN5C+mrjsNelxKRcqkMmOIgW64+/p+kBX3eFc/f5y7MaTlXIUqKjOGGMTDV0ktdZcxFChjkVCZMcRClIlIxcjaVV5bG8XqjCGu1KWqjOLteme5iaSx4mgXXb0hf7LFllFMHd3ll+KpIhqBKD8Hb2Aoy7bKKB7DLnOEaW0OdMbAaj7jW+VUlieYQ64us6AR2dQK9phsoiaGFpWmdc6LUrrN1cehNEkxh0tkb2aIkGQ8ZV89d2uYfp8bK6fG0Qa32x8+gqgvlNOP2XPKrg3TrppspM9jtLAECewPcqKK42M8Z2stWibcj2/IgGHazc+/MA4XMd+3Bst5eb9h0eK3WrJkvxyE6bQXTyaTuDcMS5fihqW8LJQ41A2WW4LEcf7vdyP8mDkrqaY3BO2aSP7TPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoBzKTFoZ/msnfjbH+MpJ//v29KdZvRgKGYKg/YAiG+gOGYKg/YAiG+gOGYKg/YAiG+gOGYKg/YAiG+gOGYKg/YAiG+gOGYKg/YMjwH0H28n0uTHKUAAAAAElFTkSuQmCC"
-        alt="Avatar" class="avatar">
-    </div>
+    <form (submit)="submitted()" class="modal-content animate">
+      <div class="imgcontainer">
+        <span [routerLink]="['']"class="close" title="Close Modal">&times;</span>
+        <img
+          src="data:image/png;base64,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"
+          alt="Avatar" class="avatar">
+      </div>
+  
+      <div class="container">
+        <label for="uname" class="form-label">Username</label>
+        <input type="text" name="name" [(ngModel)]="FormData.name" placeholder="Enter your name" class="form-control"
+          id="uname">
+  
+        <label for="pass"><b>Password</b></label>
+        <input class="form-control" type="password" placeholder="Enter Password" name="password" [(ngModel)]="FormData.password"
+          required>
+  
+        <button type="submit" [routerLink] = "['/main']" ><b><i>LOGIN</i></b></button>
+        <!-- <label>
+            <input type="checkbox" checked="checked" name="remember"> <b><i>Remember Me</i></b>
+          </label> -->
+      </div>
+  
+      <!-- <div class="container" style="background-color:#2878e0">
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button> 
+        
+      </div> -->
+    </form>
+  </div>
 
-    <div class="container">
-      <label for="uname" class="form-label">Username</label>
-      <input type="text" name="uname" [(ngModel)]="FormData.uname" placeholder="Enter your name" class="form-control"
-        id="uname">
-
-      <label for="pass"><b>Password</b></label>
-      <input class="form-control" type="password" placeholder="Enter Password" name="pass" [(ngModel)]="FormData.pass"
-        required>
-
-      <button type="submit" [routerLink]="['/main']"><b><i>LOGIN</i></b></button>
-      <!-- <label>
-          <input type="checkbox" checked="checked" name="remember"> <b><i>Remember Me</i></b>
-        </label> -->
-    </div>
-
-    <div class="container" style="background-color:#2878e0">
-      <!-- <button type="button" onclick="document.getElementById('id01').style.display='none'"
-          class="cancelbtn"><b>Cancel</b></button> -->
-      <!--<span class="psw"><a href="#">Forgot password?</a></span>-->
-    </div>
-  </form>
-</div>
