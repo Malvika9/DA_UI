@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { concat, Observable } from 'rxjs';
-import { derivatives, futuresderivatives, optionsderivatives } from 'src/derivatives';
+import { BackendDerivatives, derivatives, futuresderivatives, optionsderivatives } from 'src/derivatives';
 import { UtilityService } from '../utility.service';
 @Component({
   selector: 'app-companyselection',
@@ -137,13 +137,46 @@ totalList:derivatives={
   optionsTrade: []
 };
 
+analysisclicked : boolean = false;
+
+payOffResult: BackendDerivatives ={
+  breakEvenPoints :[],
+  payOffCoordinates : [],
+  tradeLoss:'',
+  tradeMargin:0,
+  tradeProfit:''
+
+} //declaring the payoff chart array
+ 
 sendDerivatives(){
+
   this.displayBasic = false;
   this.totalList.futuresTrade.push(this.fd);
   this.totalList.optionsTrade.push(this.od);
   this.utility.sendDerivative(this.totalList);
 
-  console.log(this.totalList);
+  
+  this.payOffResult = this.utility.getDerivatives()
+  console.log(this.payOffResult);
+
+  // console.log(this.analysisclicked);
+  // console.log(this.totalList);
 }
+
+ 
+
+//get the backend dervivatives
+// onPayoff()
+// {
+//   this.utility.getDerivatives().subscribe((response) => 
+//   {
+//     this.analysisclicked = true;
+//     console.log(response);
+//     this.payOffResult = response;
+//     console.log(this.payOffResult);
+//   }
+//   );
+// }
+
 
 }

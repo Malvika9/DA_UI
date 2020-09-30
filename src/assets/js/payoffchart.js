@@ -20,6 +20,8 @@ function callpayoffchart(){
     grd.addColorStop(0, "hsla(225,72%,60%,1)");
     grd.addColorStop(1, "hsla(225,72%,60%,0)");
     
+    // payoffValues : Array<BackendDerivatives>[];
+    // payoffValues.spotPrice
     var oData = {
       "2008": 10,
       "2009": 39.9,

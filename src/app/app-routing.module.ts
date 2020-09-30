@@ -16,15 +16,8 @@ const routes: Routes = [
   {
     path:"login",component:LoginComponent
   },
-  {
-    path:"payoffchart",component:PayoffchartComponent
-  },
-  {
-    path:"derivative",component:DerivativeselectionComponent
-  },
-  {
-    path:"analysis",component:AnalysisComponent
-  },
+  
+ 
   {
     path:"main",component:MainComponent
   }

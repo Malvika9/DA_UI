@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   constructor(public Utility: UtilityService , private modalService: NgbModal ) { }
   loginButton: boolean = false;
   FormData:any={};
-
+  contactForm: FormGroup;
   closeResult: string;
   // payload: any;
   value:any;
@@ -25,10 +25,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void { }
 
   submitted() {
-    console.log("submitted");
-    console.log(this.FormData);
+    // this.loginButton = !this.loginButton;
+    
+   
     this.Utility.login(this.FormData);
-    console.log("submitted");
+    
     // this.value = this.Utility.getLoginStatus().subscribe(data => {
     //   console.log(data);
     // }, err => {

@@ -1,37 +1,9 @@
 
-<!-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color :lightgreen">
-    <div class="container-fluid">
-        <a class="navbar-brand" [routerLink]="['']" [routerLinkActive]="['active']">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" [routerLink]="['/trades']"
-                        [routerLinkActive]="['active']">Select a company</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" [routerLink]="['/analysis']"
-                        [routerLinkActive]="['active']">Analysis</a>
-                </li>
+<div *ngIf = "isLoggedIn===false">
+  <button [routerLink] = "['']">Go back to login</button>
+</div>
 
-            </ul>
-            <div>
-                Welcome {{user}}!
-            </div>
-            <div class="ml-1">
-                <a class="nav-item nav-link active" aria-current="page" [routerLink]="['/login']"
-                    [routerLinkActive]="['active']">Log out
-                </a>
-            </div>
-
-        </div>
-    </div>
-</nav> -->
-
-
+<div *ngIf = "isLoggedIn">
   <header id="header">
     <div class="container">
 
@@ -43,7 +15,7 @@
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-          <li><a [routerLink] = "['']" >Log out</a></li>
+          <li><a [routerLink] = "['']" (click) = "loggedOut()" >Log out</a></li>
  
         
         </ul>
@@ -53,3 +25,6 @@
   </header><!-- End Header -->
 
   <app-companyselection></app-companyselection>
+
+</div>
+ 

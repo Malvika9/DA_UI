@@ -1,22 +1,75 @@
-<header id="header">
-    <div class="container">
 
-      <div class="logo float-left">
-        <h1 class="text-light"><a href="index.html"><span>DERIAN</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+<body style="width: 800px;
+margin-left: auto;
+margin-right: auto;" >
+  <div class="row">
+
+    <div class="col-sm-1">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+
+            <br>
+            <br>
+           <marquee behavior="alternate" direction="float-left">Max Profit</marquee> <br><label type="number" placeholder="0">{{NetProfit}}$</label>
+          </div>
+          <div class="flip-card-back" style="background-image: url('http://pluspng.com/img-png/smily-png-hd-smiley-png-3896.png');
+          background-size: cover;"> 
+          </div>
+        </div>
       </div>
-
-      <nav class="nav-menu float-right d-none d-lg-block">
-        <ul>
-          <li><a [routerLink] = "['']" >Log out</a></li>
- 
-        
-        </ul>
-      </nav><!-- .nav-menu -->
-
     </div>
-  </header><!-- End Header -->
-<button [routerLink] = "['/main']">Back</button>
-<button [routerLink] = "['/payoffchart']">payoffchart</button>
+    <div class="col-sm-1">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+  
+            <br>
+            <br>
+            <marquee behavior="alternate" direction="float-left">Max Loss/</marquee><br> <label type="number" placeholder="0">{{NetLoss}}$</label>
+          </div>
+          <div class="flip-card-back" style="background-image: url('http://pluspng.com/img-png/smily-png-hd-smiley-png-3896.png');
+          background-size: cover;"> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            
+            <br>
+            <br>
+            <marquee behavior="alternate" direction="float-left">Margin</marquee><br><label type="number" placeholder="0">{{margin}}$</label>
+          </div>
+          <div class="flip-card-back" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/711NDQNFqxL.png');
+          background-size: cover;"> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-sm-1" >
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+          
+            <br>
+            <br>
+           <marquee behavior="alternate" direction="float-left">Breakeven-Point</marquee> <br><input value="" type="number" placeholder="0"/>$
+          </div>
+          <div class="flip-card-back" style="background-image: url('http://cdn.shopify.com/s/files/1/1061/1924/products/Money_Bag_Emoji_grande.png');
+          background-size: cover;">
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</body>
+
+<button (click) = "payoffchartclicked()">payoffchart</button>
+
+<div *ngIf="payoffvalue">
+  <app-payoffchart></app-payoffchart>
+</div>
 <!--  -->

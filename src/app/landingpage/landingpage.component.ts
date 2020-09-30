@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landingpage.component.css']
 })
 export class LandingpageComponent implements OnInit {
-
+  QueryData:any={};
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  submitQuery(event){
+    //to prevent the default action
+    event.preventDefault();
+   
+  }
 }
