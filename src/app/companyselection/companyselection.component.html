@@ -99,10 +99,10 @@
             <div>
               <p>
                 Market position:
-                <input (change)="onFuturesMarketChange($event)" type="radio" name="futures" id="long" value="long">
-                <label for="long">Long Futures</label>
-                <input (change)="onFuturesMarketChange($event)" type="radio" name="futures" id="short" value="short">
-                <label for="short">Short Futures</label><br>
+                <input (change)="onFuturesMarketChange($event)" type="radio" name="futures" id="long" value="Long">
+                <label for="Long">Long</label>
+                <input (change)="onFuturesMarketChange($event)" type="radio" name="futures" id="Short" value="Short">
+                <label for="short">Short</label><br>
               </p>
 
               <p>Futures price:<input type="number" id="futuresPrice" name="futuresPrice"
@@ -127,23 +127,53 @@
             <div>
               <p>
                 Market position:
-                <input (change)="onOptionMarketChange($event)" type="radio" name="optionsCat" id="long" value="long">
-                <label for="long">Long Futures</label>
-                <input (change)="onOptionMarketChange($event)" type="radio" name="optionsCat" id="short"
-                  value="short">
-                <label for="short">Short Futures</label><br>
+                <input (change)="onOptionMarketChange($event)" type="radio" name="optionsCat" id="Long" value="Long">
+                <label for="Long">Long</label>
+                <input (change)="onOptionMarketChange($event)" type="radio" name="optionsCat" id="Short"
+                  value="Short">
+                <label for="short">Short</label><br>
               </p>
               <p>
                 Option Type:
-                <input (change)="onOptionTypeChange($event)" type="radio" name="optionsType" id="call" value="call">
+                <input (change)="onOptionTypeChange($event)" type="radio" name="optionsType" id="call" value="Call">
                 <label for="call">Call</label>
-                <input (change)="onOptionTypeChange($event)" type="radio" name="optionsType" id="put" value="put">
+                <input (change)="onOptionTypeChange($event)" type="radio" name="optionsType" id="put" value="Put">
                 <label for="put">Put</label><br>
               </p>
               <p>Premium:<input type="number" id="premium" name="premium" [(ngModel)]="OptionsData.premium" value="premium"></p>
               <p>Lot Quantity:<input type="number" id="lot_quantity" name="lotQuantity"
                   [(ngModel)]="OptionsData.lotQuantity" value="lotQuantity"></p>
 
+              <!-- <p *ngIf = "OptionsData.companyName == Amazon">
+                Strike Price:
+                <select (change)="strikeprice($event)" id="Strike Price" name="strikePrice">
+                  <option value="1,000,000">1</option>
+                  <option value="2,000,000">2</option>
+                  <option value="3,000,000">3</option>
+                  <option value="4,000,000">4,000,000</option>
+                  <option value="5,000,000">5,000,000</option>
+                  <option value="6,000,000">6,000,000</option>
+                  <option value="7,000,000">7,000,000</option>
+                  <option value="8,000,000">8,000,000</option>
+                  <option value="9,000,000">9,000,000</option>
+                  <option value="10,000,000">10,000,000</option>
+                </select>
+              </p>
+              <p *ngIf = "OptionsData.companyName == Google">
+                Strike Price:
+                <select (change)="strikeprice($event)" id="Strike Price" name="strikePrice">
+                  <option value="1,000,000">4</option>
+                  <option value="2,000,000">5</option>
+                  <option value="3,000,000">3,000,000</option>
+                  <option value="4,000,000">4,000,000</option>
+                  <option value="5,000,000">5,000,000</option>
+                  <option value="6,000,000">6,000,000</option>
+                  <option value="7,000,000">7,000,000</option>
+                  <option value="8,000,000">8,000,000</option>
+                  <option value="9,000,000">9,000,000</option>
+                  <option value="10,000,000">10,000,000</option>
+                </select>
+              </p> -->
               <p>
                 Strike Price:
                 <select (change)="strikeprice($event)" id="Strike Price" name="strikePrice">
@@ -163,7 +193,7 @@
             </div>
 
             <div>
-              <button type="button">Add</button>
+              <button type="reset" (click) = "sendDerivatives()">Add</button>
             </div>
 
           </form>

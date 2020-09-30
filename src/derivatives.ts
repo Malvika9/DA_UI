@@ -17,8 +17,8 @@ export interface optionsderivatives{
    
 }
 export interface derivatives{
-   List<futuresderivatives>():any;
-   List<optionsderivatives>():any;
+   futuresTrade:futuresderivatives[];
+   optionsTrade:optionsderivatives[];
 }
 // export interface Optionsderivatives{
 
