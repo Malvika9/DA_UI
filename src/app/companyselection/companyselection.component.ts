@@ -157,6 +157,7 @@ totalList:derivatives={
 };
 
 sendDerivatives(){
+  this.displayBasic = false;
   this.totalList.futuresTrade.push(this.fd);
   this.totalList.optionsTrade.push(this.od);
   this.utility.sendDerivative(this.totalList);

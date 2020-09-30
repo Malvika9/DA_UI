@@ -14,40 +14,40 @@ export class UtilityService {
 
   isLoggedIn: boolean = false;
 
+  // login(credentials: Credentials) {
+  //   this.myHttp
+  //     .post('https://mycrudops.herokuapp.com/users', credentials)
+  //     .subscribe(data => {
+  //       console.log(data);
+  //       console.log('logged in  successfully');
+  //     }, err => {
+  //       //in the failuer scenario
+  //       console.log(err);
+  //     });
+  // }
   login(credentials: Credentials) {
-    this.myHttp
-      .post('https://mycrudops.herokuapp.com/users', credentials)
+    let httpHeaders=new HttpHeaders().set('allow-origin-access-control','*')
+    .set('Content-type','application/json');
+    return this.myHttp
+      .post('http://localhost:8080/trades/login', JSON.stringify(credentials),{headers:httpHeaders})
       .subscribe(data => {
-        console.log(data);
-        console.log('logged in  successfully');
+        if(data==true){
+          window.alert('Logged in Successfully');  
+          this.router.navigateByUrl('');
+        } else{
+          window.alert('Username And Password Incorrect');
+//          this.router.navigateByUrl();
+        }
+     //   console.log('logged in successfully');
       }, err => {
         //in the failuer scenario
         console.log(err);
       });
-  }
-//   login(credentials: Credentials) {
-//     let httpHeaders=new HttpHeaders().set('allow-origin-access-control','*')
-//     .set('Content-type','application/json');
-//     return this.myHttp
-//       .post('http://localhost:8080/trades/login', JSON.stringify(credentials),{headers:httpHeaders})
-//       .subscribe(data => {
-//         if(data==true){
-//           window.alert('Logged in Successfully');  
-//           this.router.navigateByUrl('');
-//         } else{
-//           window.alert('Username And Password Incorrect');
-// //          this.router.navigateByUrl();
-//         }
-//      //   console.log('logged in successfully');
-//       }, err => {
-//         //in the failuer scenario
-//         console.log(err);
-//       });
 
-//   }
+  }
   sendDerivative(derivative:derivatives){
     this.myHttp
-      .post('https://mycrudops.herokuapp.com/users',derivative )
+      .post('http://localhost:8080/trades/example',derivative )
       .subscribe(data => {
         console.log(data);
         console.log('derivatives submitted successfully');
@@ -57,10 +57,7 @@ export class UtilityService {
       });
   }
 
-
-
-
-  setIsLoggedIn() {
+setIsLoggedIn() {
     this.isLoggedIn = true;
   }
   setIsLoggedOut() {

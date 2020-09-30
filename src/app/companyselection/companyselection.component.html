@@ -144,7 +144,7 @@
               <p>Lot Quantity:<input type="number" id="lot_quantity" name="lotQuantity"
                   [(ngModel)]="OptionsData.lotQuantity" value="lotQuantity"></p>
 
-              <!-- <p *ngIf = "OptionsData.companyName == Amazon">
+              <!-- <p *ngIf = "OptionsData.companyName == 'Amazon'">
                 Strike Price:
                 <select (change)="strikeprice($event)" id="Strike Price" name="strikePrice">
                   <option value="1,000,000">1</option>
@@ -159,7 +159,7 @@
                   <option value="10,000,000">10,000,000</option>
                 </select>
               </p>
-              <p *ngIf = "OptionsData.companyName == Google">
+              <p *ngIf = "OptionsData.companyName == 'Google'">
                 Strike Price:
                 <select (change)="strikeprice($event)" id="Strike Price" name="strikePrice">
                   <option value="1,000,000">4</option>
@@ -177,23 +177,23 @@
               <p>
                 Strike Price:
                 <select (change)="strikeprice($event)" id="Strike Price" name="strikePrice">
-                  <option value="1,000,000">1,000,000</option>
-                  <option value="2,000,000">2,000,000</option>
-                  <option value="3,000,000">3,000,000</option>
-                  <option value="4,000,000">4,000,000</option>
-                  <option value="5,000,000">5,000,000</option>
-                  <option value="6,000,000">6,000,000</option>
-                  <option value="7,000,000">7,000,000</option>
+                  <option value="2500">2500</option>
+                  <option value="2600">2600</option>
+                  <option value="2700">2700</option>
+                  <option value="2800">2800</option>
+                  <option value="2900">2900</option>
+                  <option value="3000">3000</option>
+                  <!-- <option value="7,000,000">7,000,000</option>
                   <option value="8,000,000">8,000,000</option>
                   <option value="9,000,000">9,000,000</option>
-                  <option value="10,000,000">10,000,000</option>
+                  <option value="10,000,000">10,000,000</option> -->
                 </select>
               </p>
 
             </div>
 
             <div>
-              <button type="reset" (click) = "sendDerivatives()">Add</button>
+              <button type="reset" (click) = "createOptionsList()" >Add</button>
             </div>
 
           </form>
@@ -204,7 +204,7 @@
 
     </div>
     <ng-template pTemplate="footer">
-      <p-button icon="pi pi-check" (click)="displayBasic=false" [routerLink] = "['/analysis']" label="Analyse" styleClass="p-button-text"></p-button>
+      <p-button icon="pi pi-check" (click) = "sendDerivatives()" [routerLink] = "['/analysis']" label="Analyse" styleClass="p-button-text"></p-button>
       
     </ng-template>
     <!-- <div class="modal-header">
