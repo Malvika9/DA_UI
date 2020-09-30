@@ -36,7 +36,7 @@
 
   .flatTable  tr{
       height: 50px;
-      width:100;
+      width:100%;
       background:#acd2d8;
       border-bottom:rgba(158, 179, 218, 0.05) 5px solid;
       cursor: pointer;

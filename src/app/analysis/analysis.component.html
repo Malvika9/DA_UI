@@ -1,4 +1,7 @@
-
+<!-- <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/chart.min.js@2.8.0"></script>
+<script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/Chart.min.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript" src="../../assets/js/payoffchart.js"></script> -->
+<!-- <script src="http://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script> -->
 <body style="width: 800px;
 margin-left: auto;
 margin-right: auto;" >
@@ -49,27 +52,40 @@ margin-right: auto;" >
         </div>
       </div>
     </div>
-    <!-- <div class="col-sm-1" >
+     <div class="col-sm-1" >
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
           
             <br>
             <br>
-           <marquee behavior="alternate" direction="float-left">Breakeven-Point</marquee> <br><input value="" type="number" placeholder="0"/>$
+           <marquee behavior="alternate" direction="float-left">Breakeven-Point</marquee> <br>
+           <label type="number" placeholder="0" *ngFor = "let i of bp">
+             {{i}}
+            </label>
           </div>
           <div class="flip-card-back" style="background-image: url('http://cdn.shopify.com/s/files/1/1061/1924/products/Money_Bag_Emoji_grande.png');
           background-size: cover;">
           </div>
         </div>
       </div>
-    </div> -->
+    </div> 
   </div>
-</body>
 
-<button (click) = "payoffchartclicked()">payoffchart</button>
 
-<div *ngIf="payoffvalue">
-  <app-payoffchart></app-payoffchart>
+<!-- <button (click) = "payoffchartclicked()">payoffchart</button> -->
+
+
+<!-- <div class="wrapper">
+  <canvas id='myChart'></canvas>
+  <div class="label">text</div>
 </div>
-<!--  -->
+<h1>Spot Price</h1>
+<h1> Profit/Loss</h1> -->
+
+
+<!-- <p>Please mouse over the dots</p> -->
+</body>
+<!-- <script>
+
+</script> -->

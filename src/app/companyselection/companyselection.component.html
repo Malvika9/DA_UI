@@ -159,7 +159,8 @@
 
                 <p style="color:black;" *ngIf="OptionsData.companyName === 'Amazon'">
                   Strike Price:
-                  <select (change)="strikeprice($event)" id="Strike Price" name="strikePrice">
+                  <select (change)="strikeprice($event)" id="Strike Price" name="strikePrice" placeholder = "select value">
+                    <option disabled = "" selected = "">Select Option</option>
                     <option value="2750">2750</option>
                     <option value="2800">2800</option>
                     <option value="2850">2850</option>
@@ -174,7 +175,8 @@
                 </p>
                 <p style="color:black;" *ngIf="OptionsData.companyName === 'Google'">
                   Strike Price:
-                  <select (change)="strikeprice($event)" id="Strike Price" name="strikePrice">
+                  <select (change)="strikeprice($event)" id="Strike Price" name="strikePrice" placeholder = "select value">
+                    <option disabled = "" selected = "">Select Option</option>
                     <option value="1275">1275</option>
                     <option value="1300">1300</option>
                     <option value="1325">1325</option>
@@ -190,6 +192,7 @@
                 <p style="color:black;" *ngIf="OptionsData.companyName === 'Walmart'">
                   Strike Price:
                   <select (change)="strikeprice($event)" id="Strike Price" name="strikePrice">
+                    <option disabled = "" selected = "">Select Option</option>
                     <option value="125">125</option>
                     <option value="130">130</option>
                     <option value="135">135</option>
@@ -216,15 +219,15 @@
         </p-tabView>
       </div>
 
-      <p-button icon="pi pi-check" (click)="sendDerivatives()" label="Analyse" styleClass="p-button-text"></p-button>
+      <p-button icon="pi pi-check" (click)="sendDerivatives()"label="Analyse" styleClass="p-button-text"></p-button>
 
     </p-dialog>
   </table>
 
 </form>
 <!-- TABLE ENDS HERE -->
-
+<!-- 
 
 <div *ngIf="analysisclicked">
-  <app-analysis [pd]="payOffResult"></app-analysis>
-</div>
+  <app-analysis ></app-analysis>
+</div> -->

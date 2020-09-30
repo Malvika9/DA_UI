@@ -17,6 +17,9 @@ const routes: Routes = [
     path:"login",component:LoginComponent
   },
   
+  {
+    path:"analysis",component:AnalysisComponent
+  },
  
   {
     path:"main",component:MainComponent

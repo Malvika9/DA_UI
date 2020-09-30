@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BackendDerivatives } from 'src/derivatives';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BackendDerivatives, payoffType } from 'src/derivatives';
 import { CompanyselectionComponent } from '../companyselection/companyselection.component';
+
+// declare function callpayoffchart(payOffCoordinates):any;
 
 @Component({
   selector: 'app-analysis',
@@ -9,27 +12,46 @@ import { CompanyselectionComponent } from '../companyselection/companyselection.
 })
 export class AnalysisComponent implements OnInit {
 
-  payoffvalue :boolean = false;
- // payOffResult: BackendDerivatives[] = []; //declaring the payoff chart array
+  payoffvalue: boolean = false;
+  // payOffResult: BackendDerivatives[] = []; //declaring the payoff chart array
 
-  constructor(private company:CompanyselectionComponent) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
-  @Input() pd : BackendDerivatives;
+  payOffResult: BackendDerivatives;
 
-  NetLoss : string = '';
-  NetProfit : string = '';
-  margin :number = 0;
-
+  NetLoss: string = '';
+  NetProfit: string = '';
+  margin: number = 0;
+  bp : [] = []
+  pc : payoffType;
   ngOnInit(): void {
-     this.NetLoss= this.company.payOffResult.tradeLoss ;
-     this.NetProfit = this.company.payOffResult.tradeProfit;
-     this.margin = this.company.payOffResult.tradeMargin;
 
-     console.log(this.pd.tradeLoss)
+    // this.payOffResult = this.route
+    //   .queryParams
+    //   .subscribe(params => {
+    //     // Defaults to 0 if no query param provided.
+    //     this.payOffResult = +params['payOffResult'] || 0;
+    //   });
+    // this.payOffResult = this.route.snapshot.queryParamMap('payOffResult')
+    this.NetLoss = history.state.tradeLoss;
+    this.NetProfit = history.state.tradeProfit;
+    this.margin = history.state.tradeMargin;
+    this.bp = history.state.breakEvenPoints;
+    console.log("breakeven-points")
+    console.log(this.bp)
+    this.pc = history.state.payOffCoordinates
+
+    console.log(this.pc)
+// this.pc.profitOrLoss = history.state.payOffCoordinates.profitOrLoss
+// this.pc.spotPrice = history.state.payOffCoordinates.spotPrice
+    // this.payOffResult = this.router.getCurrentNavigation().extras.queryParams.payOffResult;
+    console.log("inside analysis")
+    console.log(history.state.payOffCoordinates)
+    // callpayoffchart(history.state.payOffCoordinates);
   }
 
-  payoffchartclicked(){
-    this.payoffvalue=true;
-    
+  payoffchartclicked() {
+    this.payoffvalue = true;
+
   }
 }
