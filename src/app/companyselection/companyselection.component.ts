@@ -115,25 +115,6 @@ createFuturesList(){
 
    console.log(this.futureslist);
 
-
-  //  this.fd.companyName = '';
-  //  this.fd.lotQuantity = 0;
-  //  this.fd.futuresCat = '';
-  //  this.fd.futuresPrice = 0;
-  //  this.fd.underlyingAsset = '';
- 
-  //  this.FuturesData.companyName = '';
-  //  this.FuturesData.lotQuantity = 0;
-  //  this.FuturesData.futuresCat = '';
-  //  this.FuturesData.futuresPrice = 0;
-  //  this.FuturesData.underlyingAsset = '';
-
-  // this.fd.lotQuantity = 0;
-  // this.fd.futuresCat = '';
-  // this.fd.futuresPrice = 0;
-  // this.fd.underlyingAsset = '';
-
-  // console.log(this.futureslist);
 }
 
 createOptionsList(){
