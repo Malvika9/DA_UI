@@ -72,15 +72,6 @@ export class UtilityService {
       });
   
   }
-  //  navigationExtras: NavigationExtras = {
-  //   payoffResult: {
-  //     breakEvenPoints: [],
-  //   payOffCoordinates: [],
-  //   tradeLoss: '',
-  //   tradeMargin: 0,
-  //   tradeProfit: '',
-  //   }
-  // };
   
   Makeinterface(a:number[],b:payoffType[],c:string,d:number,e:string) {
     this.pay.breakEvenPoints = a
