@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BackendDerivatives, payoffType } from 'src/derivatives';
 import { CompanyselectionComponent } from '../companyselection/companyselection.component';
+import { UtilityService } from '../utility.service';
 
 // declare function callpayoffchart(payOffCoordinates):any;
 
@@ -15,7 +16,7 @@ export class AnalysisComponent implements OnInit {
   payoffvalue: boolean = false;
   // payOffResult: BackendDerivatives[] = []; //declaring the payoff chart array
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private utility: UtilityService) { }
 
   payOffResult: BackendDerivatives;
 
@@ -24,15 +25,16 @@ export class AnalysisComponent implements OnInit {
   margin: number = 0;
   bp : [] = []
   pc : payoffType;
+
+  isLoggedIn: boolean;
+
+  loggedOut(){
+    this.utility.setIsLoggedOut();
+  }
+
   ngOnInit(): void {
 
-    // this.payOffResult = this.route
-    //   .queryParams
-    //   .subscribe(params => {
-    //     // Defaults to 0 if no query param provided.
-    //     this.payOffResult = +params['payOffResult'] || 0;
-    //   });
-    // this.payOffResult = this.route.snapshot.queryParamMap('payOffResult')
+    this.isLoggedIn= this.utility.getIsLoggedIn();
     this.NetLoss = history.state.tradeLoss;
     this.NetProfit = history.state.tradeProfit;
     this.margin = history.state.tradeMargin;
@@ -42,12 +44,10 @@ export class AnalysisComponent implements OnInit {
     this.pc = history.state.payOffCoordinates
 
     console.log(this.pc)
-// this.pc.profitOrLoss = history.state.payOffCoordinates.profitOrLoss
-// this.pc.spotPrice = history.state.payOffCoordinates.spotPrice
-    // this.payOffResult = this.router.getCurrentNavigation().extras.queryParams.payOffResult;
+
     console.log("inside analysis")
     console.log(history.state.payOffCoordinates)
-    // callpayoffchart(history.state.payOffCoordinates);
+ 
   }
 
   payoffchartclicked() {

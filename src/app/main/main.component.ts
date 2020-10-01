@@ -37,10 +37,6 @@ export class MainComponent implements OnInit {
   }
   ngOnInit() {
     this.isLoggedIn= this.utility.getIsLoggedIn();
-    if(this.isLoggedIn == false)
-      window.alert("Error! Please login to continue")
-    else
-      window.alert("Successfully logged in!")
   }
 
 }

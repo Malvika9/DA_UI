@@ -12,8 +12,8 @@ import { UtilityService } from '../utility.service';
 })
 export class CompanyselectionComponent implements OnInit {
 
-  
-  constructor(private primengConfig: PrimeNGConfig , private utility : UtilityService) { }
+
+  constructor(private primengConfig: PrimeNGConfig, private utility: UtilityService) { }
 
   ngOnInit(): void {
   }
@@ -21,152 +21,149 @@ export class CompanyselectionComponent implements OnInit {
   displayBasic: boolean;
   showBasicDialog() {
     this.displayBasic = true;
-}
-
-FuturesData:futuresderivatives={
-  companyName:'',
-  futuresCat:'',
-  underlyingAsset:'',
-  lotQuantity:0,
-  futuresPrice:0
-
-};
-
-OptionsData:optionsderivatives={
-  companyName:'',
-  optionsCat:'', //long short
-  optionsType:'', //call put
-  underlyingAsset:'',
-  lotQuantity:0,
-  strikePrice:0,
-  premium:0
-};
-
-AmazonClicked(){
-   this.FuturesData.companyName = "Amazon"
-   this.OptionsData.companyName = "Amazon"
-  // console.log(this.FormData.companyName);
-}
-GoogleClicked(){
-  this.FuturesData.companyName = "Google"
-  this.OptionsData.companyName = "Google"
-//  console.log(this.FormData.companyName);
-}
-WalmartClicked(){
-  this.FuturesData.companyName = "Walmart"
-  this.OptionsData.companyName = "Walmart"
-}
-
-onAssetChange(event){
-  this.FuturesData.underlyingAsset=event.target.value
-  this.OptionsData.underlyingAsset=event.target.value
-}
-
-onFuturesMarketChange(event){
-  this.FuturesData.futuresCat=event.target.value
-  // console.log(this.FormData.futuresCat)
-}
-
-onOptionMarketChange(event){
-  this.OptionsData.optionsCat=event.target.value
-}
-
-
-onOptionTypeChange(event){
-  this.OptionsData.optionsType = event.target.value
-
-}
-
-strikeprice(event){
-  this.OptionsData.strikePrice = event.target.value
-  
-}
-futureslist : Array<futuresderivatives> = [];
-
-
-optionsList: optionsderivatives[] = [];
-
-createFuturesList(){
-  let fd1:futuresderivatives = {
-    companyName:'',
-    futuresCat:'',
-    underlyingAsset:'',
-    lotQuantity:0,
-    futuresPrice:0
   }
-console.log("just inside futuresList")
-  console.log(this.futureslist);
-  fd1.companyName = this.FuturesData.companyName;
-  fd1.lotQuantity = this.FuturesData.lotQuantity;
-  fd1.futuresCat = this.FuturesData.futuresCat;
-  fd1.futuresPrice = this.FuturesData.futuresPrice;
-  fd1.underlyingAsset = this.FuturesData.underlyingAsset;
-  console.log("  before pushing")
-  console.log(fd1);
-  this.futureslist.push(fd1);
-  
-  console.log("  futuresList")
-   console.log(this.futureslist);
 
-}
+  FuturesData: futuresderivatives = {
+    companyName: '',
+    futuresCat: '',
+    underlyingAsset: '',
+    lotQuantity: 0,
+    futuresPrice: 0
 
-createOptionsList(){
- let od:optionsderivatives={
-    companyName:'',
-    optionsCat:'', //long short
-    optionsType:'', //call put
-    underlyingAsset:'',
-    lotQuantity:0,
-    strikePrice:0,
-    premium:0
-  }
-  od.companyName = this.OptionsData.companyName;
-  od.lotQuantity = this.OptionsData.lotQuantity;
-  od.optionsCat = this.OptionsData.optionsCat;
-  od.strikePrice = this.OptionsData.strikePrice;
-  od.underlyingAsset = this.OptionsData.underlyingAsset;
-  od.optionsType = this.OptionsData.optionsType;
-  od.premium = this.OptionsData.premium;
-
-  this.optionsList.push(od);
-
-}
-
-
-analysisclicked : boolean = false;
-
-payOffResult: BackendDerivatives ={
-  breakEvenPoints :[],
-  payOffCoordinates : [],
-  tradeLoss:'',
-  tradeMargin:0,
-  tradeProfit:''
-
-} //declaring the payoff chart array
- 
-sendDerivatives(){
-  let totalList:derivatives={
-    futuresTrade: [],
-    optionsTrade: []
   };
-  this.displayBasic = false;
 
-  totalList.futuresTrade = this.futureslist;
-  totalList.optionsTrade = this.optionsList;
-  console.log(totalList);
-  this.utility.sendDerivative(totalList);
- 
-  setTimeout(() => 
-{
-  this.utility.getDerivatives();
-},
-10000);
+  OptionsData: optionsderivatives = {
+    companyName: '',
+    optionsCat: '', //long short
+    optionsType: '', //call put
+    underlyingAsset: '',
+    lotQuantity: 0,
+    strikePrice: 0,
+    premium: 0
+  };
 
-  
-  console.log("result"+this.payOffResult);
+  AmazonClicked() {
+    this.FuturesData.companyName = "Amazon"
+    this.OptionsData.companyName = "Amazon"
+    // console.log(this.FormData.companyName);
+  }
+  GoogleClicked() {
+    this.FuturesData.companyName = "Google"
+    this.OptionsData.companyName = "Google"
+    //  console.log(this.FormData.companyName);
+  }
+  WalmartClicked() {
+    this.FuturesData.companyName = "Walmart"
+    this.OptionsData.companyName = "Walmart"
+  }
 
-}
+  onAssetChange(event) {
+    this.FuturesData.underlyingAsset = event.target.value
+    this.OptionsData.underlyingAsset = event.target.value
+  }
 
- 
+  onFuturesMarketChange(event) {
+    this.FuturesData.futuresCat = event.target.value
+    // console.log(this.FormData.futuresCat)
+  }
+
+  onOptionMarketChange(event) {
+    this.OptionsData.optionsCat = event.target.value
+  }
+
+
+  onOptionTypeChange(event) {
+    this.OptionsData.optionsType = event.target.value
+
+  }
+
+  strikeprice(event) {
+    this.OptionsData.strikePrice = event.target.value
+
+  }
+  futureslist: Array<futuresderivatives> = [];
+
+
+  optionsList: optionsderivatives[] = [];
+  futuressummaryclicked: boolean = false;
+  optionssummaryclicked: boolean = false;
+
+  createFuturesList() {
+    let fd1: futuresderivatives = {
+      companyName: '',
+      futuresCat: '',
+      underlyingAsset: '',
+      lotQuantity: 0,
+      futuresPrice: 0
+    }
+    fd1.companyName = this.FuturesData.companyName;
+    fd1.lotQuantity = this.FuturesData.lotQuantity;
+    fd1.futuresCat = this.FuturesData.futuresCat;
+    fd1.futuresPrice = this.FuturesData.futuresPrice;
+    fd1.underlyingAsset = this.FuturesData.underlyingAsset;
+    this.futureslist.push(fd1);
+    this.futuressummaryclicked = true;
+
+  }
+
+  createOptionsList() {
+    let od: optionsderivatives = {
+      companyName: '',
+      optionsCat: '', //long short
+      optionsType: '', //call put
+      underlyingAsset: '',
+      lotQuantity: 0,
+      strikePrice: 0,
+      premium: 0
+    }
+
+    od.companyName = this.OptionsData.companyName;
+    od.lotQuantity = this.OptionsData.lotQuantity;
+    od.optionsCat = this.OptionsData.optionsCat;
+    od.strikePrice = this.OptionsData.strikePrice;
+    od.underlyingAsset = this.OptionsData.underlyingAsset;
+    od.optionsType = this.OptionsData.optionsType;
+    od.premium = this.OptionsData.premium;
+
+    this.optionsList.push(od);
+    this.optionssummaryclicked = true;
+
+  }
+
+
+  analysisclicked: boolean = false;
+
+  payOffResult: BackendDerivatives = {
+    breakEvenPoints: [],
+    payOffCoordinates: [],
+    tradeLoss: '',
+    tradeMargin: 0,
+    tradeProfit: ''
+
+  } //declaring the payoff chart array
+
+  sendDerivatives() {
+    let totalList: derivatives = {
+      futuresTrade: [],
+      optionsTrade: []
+    };
+    this.displayBasic = false;
+
+    totalList.futuresTrade = this.futureslist;
+    totalList.optionsTrade = this.optionsList;
+    console.log(totalList);
+    this.utility.sendDerivative(totalList);
+
+    setTimeout(() => {
+      this.utility.getDerivatives();
+    },
+      10000);
+
+
+    console.log("result" + this.payOffResult);
+
+  }
+
+
 
 }

@@ -197,6 +197,10 @@
      box-shadow: 0 0 8px #cc7a00;
    }
 
+   .formtable{
+     background-color: white;
+     
+   }
    .banner {
      position: relative;
      height: 300px;
@@ -382,3 +386,4 @@
        padding-bottom: 5px;
      }
    } 
+   

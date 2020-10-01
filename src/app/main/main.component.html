@@ -1,6 +1,10 @@
 
 <div *ngIf = "isLoggedIn===false">
-  <button [routerLink] = "['']">Go back to login</button>
+  <div>
+    <h3>Error! Please login to continue</h3>
+    <button [routerLink] = "['']">Go back to login</button>
+  </div>
+  
 </div>
 
 <div *ngIf = "isLoggedIn">
