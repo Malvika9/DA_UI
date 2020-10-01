@@ -18,12 +18,489 @@
     font-family:Lato;
   }
    */
-  body{
-    padding:0px;
-    background:#f6f3f7;
+
+   #topbar {
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+  }
+  
+  #topbar .contact-info a {
+    line-height: 1;
+    color: #444;
+    transition: 0.3s;
+  }
+  
+  #topbar .contact-info a:hover {
+    color: #428bca;
+  }
+  
+  #topbar .contact-info i {
+    color: #428bca;
+    padding: 4px;
+  }
+  
+  #topbar .contact-info .icofont-phone {
+    padding-left: 20px;
+    margin-left: 10px;
+  }
+  
+  #topbar .social-links a {
+    color: #5c768d;
+    padding: 4px 12px;
+    display: inline-block;
+    line-height: 1px;
+    transition: 0.3s;
+  }
+  
+  #topbar .social-links a:hover {
+    color: #428bca;
+  }
+  
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+  #header {
+    height: 70px;
+    transition: all 0.5s;
+    transition: all 0.5s;
+    padding: 10px 0;
+    background: #fff;
+    z-index: 997;
+  }
+  
+  #header.header-scrolled {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  #header .logo h1 {
+    font-size: 28px;
+    margin: 0;
+    padding: 10px 0;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  
+  #header .logo h1 a, #header .logo h1 a:hover {
+    color: #1c5c93;
+    text-decoration: none;
+  }
+  
+  #header .logo img {
+    padding: 0;
+    margin: 0;
+    max-height: 40px;
+  }
+  
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  /* Desktop Navigation */
+  .nav-menu, .nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .nav-menu > ul > li {
+    position: relative;
+    white-space: nowrap;
+    float: left;
+  }
+  
+  .nav-menu a {
+    display: block;
+    position: relative;
+    color: #5c768d;
+    padding: 12px 15px;
+    transition: 0.3s;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+    color: #428bca;
+    text-decoration: none;
+  }
+  
+  .nav-menu .drop-down ul {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: ease all 0.3s;
+  }
+  
+  .nav-menu .drop-down:hover > ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+  
+  .nav-menu .drop-down li {
+    min-width: 180px;
+    position: relative;
+  }
+  
+  .nav-menu .drop-down ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: none;
+    color: #103453;
+  }
+  
+  .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
+    color: #428bca;
+  }
+  
+  .nav-menu .drop-down > a:after {
+    content: "\ea99";
+    font-family: IcoFont;
+    padding-left: 5px;
+  }
+  
+  .nav-menu .drop-down .drop-down ul {
+    top: 0;
+    left: 100%;
+  }
+  
+  .nav-menu .drop-down .drop-down:hover > ul {
+    opacity: 1;
+    top: 0;
+  }
+  
+  .nav-menu .drop-down .drop-down > a {
+    padding-right: 35px;
+  }
+  
+  .nav-menu .drop-down .drop-down > a:after {
+    content: "\eaa0";
+    font-family: IcoFont;
+    position: absolute;
+    right: 15px;
+  }
+  
+  @media (max-width: 1366px) {
+    .nav-menu .drop-down .drop-down ul {
+      left: -90%;
+    }
+    .nav-menu .drop-down .drop-down:hover > ul {
+      left: -100%;
+    }
+    .nav-menu .drop-down .drop-down > a:after {
+      content: "\ea9d";
+    }
+  }
+  
+  /* Mobile Navigation */
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow-y: auto;
+    left: -260px;
+    width: 260px;
+    padding-top: 18px;
+    background: #1f3548;
+    transition: 0.4s;
+  }
+  
+  .mobile-nav * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .mobile-nav a {
+    display: block;
+    position: relative;
+    color: #e3f0fc;
+    padding: 10px 20px;
+    font-weight: 500;
+  }
+  
+  .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+    color: #9eccf4;
+    text-decoration: none;
+  }
+  
+  
+  
+  .mobile-nav-toggle {
+    position: fixed;
+    right: 15px;
+    top: 20px;
+    z-index: 9998;
+    border: 0;
+    background: none;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none !important;
+    line-height: 1;
+    cursor: pointer;
+    text-align: right;
+  }
+  
+  .mobile-nav-toggle i {
+    color: #5c768d;
+  }
+  
+  .mobile-nav-overly {
+    width: 100%;
+    height: 100%;
+    z-index: 9997;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgba(31, 53, 72, 0.7);
+    overflow: hidden;
+    display: none;
+  }
+  
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+  
+  .mobile-nav-active .mobile-nav {
+    left: 0;
+  }
+  
+  .mobile-nav-active .mobile-nav-toggle i {
+    color: #fff;
+  }
+  
+  
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #444;
+  }
+  
+  a {
+    color: #428bca;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #9eccf4;
+    text-decoration: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6, .font-primary {
+    font-family: "Raleway", sans-serif;
+  }
+  
+  /*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+  .back-to-top {
+    position: fixed;
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    right: 15px;
+    bottom: 15px;
+    background: #428bca;
+    color: #fff;
+    transition: display 0.5s ease-in-out;
+    z-index: 99999;
+  }
+  
+  .back-to-top i {
+    font-size: 24px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+  }
+  
+  .back-to-top:hover {
+    color: #fff;
+    background: #629fd3;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+  .container{
+  
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+   
+  
+  }
+  .dot{
+   
+    height: 40px;
+    width: 50px;
+    border-radius: 100%;
+  
+    display: inline-block;
+  }
+  
+   
+    
+  .btntablebtntable-block{
+    margin-top: 25px;
+      border-radius: 12px;
+      color: #f8f1f7;
+      align-items: center;
+      background-color: #2837c0;
+  }
+    
+    
+    #hero h1 {
+      margin: 0;
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 72px;
+      color: #d5e2e4;
+      font-family: "Poppins", sans-serif;
+    }
+    
+    #hero h2 {
+      color: #5e5e5e;
+      margin: 10px 0 0 0;
+      font-size: 22px;
+    }
+    
+   
+   
+    
+    #hero .icon-boxes {
+      padding-left:200px ;
+      margin-top: 100px;
+  display: inline-block;
+    }
+    
+    #hero .icon-box {
+      padding: 50px 30px;
+      border: 200px;
+      margin-left: 50px ;
+  
+      position: relative;
+      overflow: hidden;
+      background: rgb(245, 248, 250);
+      box-shadow: 0 0 29px 0 rgba(236, 75, 11, 0.08);
+      transition: all 0.3s ease-in-out;
+      border-color: orangered;
+      border-radius: 8px;
+      z-index: 1;
+      height: 270px;
+      /* width: 400px; */
+      
+    }
+    
+    #hero .icon-box .title {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 18px;
+      size: 20px;
+    }
+    
+    #hero .icon-box .title a {
+      color: #3627b8;
+      transition: 0.3s;
+    }
+    
+    #hero .icon-box .description {
+      font-size: 15px;
+      line-height: 28px;
+      margin-bottom: 0;
+    }
+    
+    #hero .icon-box .icon {
+      margin-bottom: 20px;
+      padding-top: 10px;
+      display: inline-block;
+      transition: all 0.3s ease-in-out;
+      font-size: 36px;
+      line-height: 1;
+      color: #2487ce;
+    }
+    
+    #hero .icon-box:hover {
+      transform: scale(1.08);
+    }
+    
+    #hero .icon-box:hover .title a {
+      color: #2487ce;
+    }
+    
+    @media (min-width: 1024px) {
+      #hero {
+        background-attachment: fixed;
+      }
+    }
+    
+    @media (max-width: 992px), (max-height: 500) {
+      #hero {
+        height: auto;
+      }
+      #hero h1 {
+        font-size: 28px;
+        line-height: 36px;
+      }
+      #hero h2 {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+    
+    /*--------------------------------------------------------------
+    # Sections General
+    --------------------------------------------------------------*/
+    section {
+      padding: 80px 0;
+    }
+    
+    .section-bg {
+      background-color: #f8fbfe;
+    }
+    
+    .section-title {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 0;
+      color: #124265;
+    }
+    
+    .section-title p {
+      margin-bottom: 0;
+      font-size: 14px;
+      color: #919191;
     }
 
-  
+
+
+   /* this is begiining of working css */
+
+  /* body{
+    padding:0px;
+    background:#f6f3f7;
+    } */
+
+/*   
   .flatTable{  
     width:100%;
  
@@ -69,7 +546,10 @@
     background-color:rgb(57, 56, 58);
     color: white;
     width:100%;
-  }
+  } */
+
+  /* comment should end here */
+
   /* .btn{
     text-align:center;
 
@@ -82,8 +562,8 @@
     width:100%;
    
   } */
-
-  .dot{
+/* **************** */
+  /* .dot{
   height: 40px;
   width: 50px;
   border-radius: 100%;
@@ -101,7 +581,11 @@
     text-align:center;
     cursor:pointer;
 
-  }
+  } */
+
+/* 8888888888 */
+  /* END OF WORKING CSS */
+
   /* .add{
     text-align:center;
     cursor:pointer;
@@ -362,7 +846,10 @@
    button:hover {
      background: #ff9800;
    }
-
+button:disabled{
+  background: #ff9800;
+  cursor: not-allowed;
+}
    @media (min-width: 568px) {
 
      .name-item,

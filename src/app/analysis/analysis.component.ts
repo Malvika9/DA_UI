@@ -4,7 +4,7 @@ import { BackendDerivatives, payoffType } from 'src/derivatives';
 import { CompanyselectionComponent } from '../companyselection/companyselection.component';
 import { UtilityService } from '../utility.service';
 
-// declare function callpayoffchart(payOffCoordinates):any;
+declare function callpayoffchart(pc):any;
 
 @Component({
   selector: 'app-analysis',
@@ -24,7 +24,7 @@ export class AnalysisComponent implements OnInit {
   NetProfit: string = '';
   margin: number = 0;
   bp : [] = []
-  pc : payoffType;
+  pc : payoffType[];
 
   isLoggedIn: boolean;
 
@@ -47,11 +47,14 @@ export class AnalysisComponent implements OnInit {
 
     console.log("inside analysis")
     console.log(history.state.payOffCoordinates)
- 
-  }
-
-  payoffchartclicked() {
-    this.payoffvalue = true;
 
   }
+
+  ngAfterViewInit() :void {
+    callpayoffchart(this.pc)
+  }
+  // payoffchartclicked() {
+  //   this.payoffvalue = true;
+
+  // }
 }

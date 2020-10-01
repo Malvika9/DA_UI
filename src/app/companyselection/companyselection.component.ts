@@ -19,9 +19,9 @@ export class CompanyselectionComponent implements OnInit {
   }
 
   displayBasic: boolean;
-  showBasicDialog() {
-    this.displayBasic = true;
-  }
+  // showBasicDialog() {
+  //   this.displayBasic = true;
+  // }
 
   FuturesData: futuresderivatives = {
     companyName: '',
@@ -42,20 +42,24 @@ export class CompanyselectionComponent implements OnInit {
     premium: 0
   };
 
-  AmazonClicked() {
+  showBasicDialogamazon() {
+    this.displayBasic = true;
     this.FuturesData.companyName = "Amazon"
     this.OptionsData.companyName = "Amazon"
-    // console.log(this.FormData.companyName);
-  }
-  GoogleClicked() {
-    this.FuturesData.companyName = "Google"
-    this.OptionsData.companyName = "Google"
-    //  console.log(this.FormData.companyName);
-  }
-  WalmartClicked() {
-    this.FuturesData.companyName = "Walmart"
-    this.OptionsData.companyName = "Walmart"
-  }
+    
+}
+showBasicDialoggoogle() {
+  this.displayBasic = true;
+  this.FuturesData.companyName = "Google"
+  this.OptionsData.companyName = "Google"
+  
+}
+showBasicDialogwalmart() {
+  this.displayBasic = true;
+  this.FuturesData.companyName = "Walmart"
+  this.OptionsData.companyName = "Walmart"
+  
+}
 
   onAssetChange(event) {
     this.FuturesData.underlyingAsset = event.target.value
@@ -80,14 +84,14 @@ export class CompanyselectionComponent implements OnInit {
   strikeprice(event) {
     this.OptionsData.strikePrice = event.target.value
 
+
   }
+
   futureslist: Array<futuresderivatives> = [];
-
-
   optionsList: optionsderivatives[] = [];
   futuressummaryclicked: boolean = false;
   optionssummaryclicked: boolean = false;
-
+  summarydisplay:boolean = false;
   createFuturesList() {
     let fd1: futuresderivatives = {
       companyName: '',
@@ -103,7 +107,7 @@ export class CompanyselectionComponent implements OnInit {
     fd1.underlyingAsset = this.FuturesData.underlyingAsset;
     this.futureslist.push(fd1);
     this.futuressummaryclicked = true;
-
+    this.summarydisplay = true;
   }
 
   createOptionsList() {
@@ -127,7 +131,7 @@ export class CompanyselectionComponent implements OnInit {
 
     this.optionsList.push(od);
     this.optionssummaryclicked = true;
-
+    this.summarydisplay = true;
   }
 
 

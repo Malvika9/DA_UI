@@ -1,11 +1,4 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    /* background-image: url('src/assets/ana4.jpg'); */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size:contain;
-  }
-  
+/* 
   .flip-card {
     background-color: transparent;
     padding: 5px;
@@ -114,15 +107,7 @@ body {
         transform: translateX(-50%);
     }
   }
-  body {
-    margin: 0;
-    overflow: hidden;
-    background: #064d79;
-    font-family: Courier, monospace;
-    font-size: 14px;
-    color:rgb(255, 253, 253); 
-  }
-  
+ 
   .wrapper {
     display: block;
     margin: 5em auto;
@@ -143,4 +128,35 @@ body {
     display: none;
     color:#333;
     
-  }
+  } */
+
+  /* <body>
+
+
+
+  <div class="container">
+
+
+
+    <label>Max Profit</label>
+    <label type="number" placeholder="0">{{NetProfit}}$</label><br>
+
+
+    <label>Max Loss/</label>
+    <label type="number" placeholder="0">{{NetLoss}}$</label><br>
+
+    <label>Margin</label>
+    <label type="number" placeholder="0">{{margin}}$</label><br>
+
+    <label>Breakeven-Point</label>
+   <div class="tab-pane fade" id="panel1003" role="tabpanel">
+      <label type="number" placeholder="0" *ngFor="let i of bp">{{i}}$&nbsp;&nbsp;</label>
+    </div>
+
+
+  </div>
+
+
+
+
+</body> */

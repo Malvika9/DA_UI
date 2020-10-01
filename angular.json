@@ -31,7 +31,8 @@
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/js/payoffchart.js"
+              "src/assets/js/payoffchart.js",
+              "./node_modules/chart.js/dist/Chart.min.js"
             ]
           },
           "configurations": {
