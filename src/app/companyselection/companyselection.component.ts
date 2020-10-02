@@ -19,10 +19,7 @@ export class CompanyselectionComponent implements OnInit {
   }
 
   displayBasic: boolean;
-  // showBasicDialog() {
-  //   this.displayBasic = true;
-  // }
-
+  
   FuturesData: futuresderivatives = {
     companyName: '',
     futuresCat: '',
@@ -68,7 +65,6 @@ showBasicDialogwalmart() {
 
   onFuturesMarketChange(event) {
     this.FuturesData.futuresCat = event.target.value
-    // console.log(this.FormData.futuresCat)
   }
 
   onOptionMarketChange(event) {
@@ -144,7 +140,7 @@ showBasicDialogwalmart() {
     tradeMargin: 0,
     tradeProfit: ''
 
-  } //declaring the payoff chart array
+  } 
 
   sendDerivatives() {
     let totalList: derivatives = {
@@ -167,7 +163,5 @@ showBasicDialogwalmart() {
     console.log("result" + this.payOffResult);
 
   }
-
-
 
 }

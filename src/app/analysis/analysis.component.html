@@ -51,15 +51,37 @@
           {{i}}&nbsp;&nbsp;
         </label> -->
 
+    <p>
+      SUMMARY : </p>
+    <div *ngFor="let f of summaryValue.futuresTrade">
+      Futures -
+      {{f.companyName}}&nbsp;
+      {{f.underlyingAsset}}&nbsp;
+      {{f.futuresCat}}&nbsp;
+      {{f.lotQuantity}}&nbsp;
+      {{f.futuresPrice}}<br>
+    </div>
+    <div *ngFor="let o of summaryValue.optionsTrade">
+      Options -
+      {{o.companyName}}&nbsp;
+      {{o.underlyingAsset}}&nbsp;
+      {{o.optionsCat}}&nbsp;
+      {{o.lotQuantity}}&nbsp;
+      {{o.optionsType}}&nbsp;
+      {{o.strikePrice}}&nbsp;
+      {{o.premium}}<br>
+    </div>
 
     <ul class="nav tabs-white nav-fill" role="tablist">
       <div class="card"
         style="background-color: #33FFFF; border: size 10px; border-radius:50px ; width: 200px; height: 250px; padding-left: 30px; padding-right: 30px;">
         <img class="card-img-top" src="https://www.downloadclipart.net/large/profit-transparent-png.png" alt="Bologna">
         <div class="card-body">
-          <h4 class="card-title">Maximum Profit</h4>
+          <h6 class="card-title">Maximum Profit</h6>
           <h6 class="card-subtitle mb-2 text-muted">
-            <label type="number" placeholder="0"><h4><b>{{NetProfit}}</b></h4></label><br>
+            <label type="number" placeholder="0">
+              <h4><b>{{NetProfit}}</b></h4>
+            </label><br>
           </h6>
         </div>
       </div>
@@ -71,9 +93,11 @@
           src="https://st2.depositphotos.com/3921439/9081/v/950/depositphotos_90810550-stock-illustration-the-graph-down-icon-chart.jpg"
           alt="Bologna">
         <div class="card-body">
-          <h4 class="card-title">Maximum Loss</h4>
+          <h6 class="card-title">Maximum Loss</h6>
           <h6 class="card-subtitle mb-2 text-muted">
-            <label type="number" placeholder="0" style="color: red;"><h4><b>{{NetLoss}}</b></h4></label><br>
+            <label type="number" placeholder="0" style="color: red;">
+              <h4><b>{{NetLoss}}</b></h4>
+            </label><br>
           </h6>
         </div>
       </div>
@@ -84,9 +108,11 @@
         <img class="card-img-top"
           src="https://cdn4.iconfinder.com/data/icons/stock-trading-apps/500/Stocks-3_15-256.png" alt="Bologna">
         <div class="card-body">
-          <h4 class="card-title">Margin</h4>
+          <h6 class="card-title">Margin</h6>
           <h6 class="card-subtitle mb-2 text-muted">
-            <label type="number" placeholder="0"><h4><b>{{margin}}</b></h4></label><br>
+            <label type="number" placeholder="0">
+              <h4><b>{{margin}}</b></h4>
+            </label><br>
           </h6>
         </div>
       </div>
@@ -97,9 +123,11 @@
         <img class="card-img-top" style="padding-top: 10px;" src="http://pix.iemoji.com/sbemojix2/1074.png"
           alt="Bologna">
         <div class="card-body">
-          <h4 class="card-title">BreakEven Points</h4>
+          <h6 class="card-title">BreakEven Points</h6>
           <h6 class="card-subtitle mb-2 text-muted">
-            <label type="number" placeholder="0" *ngFor="let i of bp"><h4><b>{{i}}&nbsp;&nbsp;</b></h4></label>
+            <label type="number" placeholder="0" *ngFor="let i of bp">
+              <h4><b>{{i}}&nbsp;&nbsp;</b></h4>
+            </label>
           </h6>
         </div>
       </div>

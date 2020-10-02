@@ -46,16 +46,18 @@ export class UtilityService {
   tradeLoss: string;
   tradeMargin: number;
   tradeProfit: string;
+  summary : derivatives;
   sendDerivative(derivative: derivatives) {
     this.myHttp
       .post('http://localhost:8080/trades/payoff', derivative)
       .subscribe(data => {
         // let breakEvenPoints: Array<number>;
+        this.summary = derivative;
         //@ts-ignore
         this.breakEvenPoints = data.breakEvenPoints
         //@ts-ignore
         this.payOffCoordinates = data.payOffCoordinates
-//@ts-ignore
+        //@ts-ignore
         this.tradeLoss = data.tradeLoss
         //@ts-ignore
         this.tradeMargin = data.tradeMargin
@@ -63,7 +65,7 @@ export class UtilityService {
         this.tradeProfit = data.tradeProfit
         console.log("just data" + data)
         console.log(data)
-        this.Makeinterface(this.breakEvenPoints ,this.payOffCoordinates,this.tradeLoss,this.tradeMargin,this.tradeProfit);
+        this.Makeinterface(this.breakEvenPoints, this.payOffCoordinates, this.tradeLoss, this.tradeMargin, this.tradeProfit);
 
         console.log(this.tradeLoss);
 
@@ -74,10 +76,10 @@ export class UtilityService {
         console.log(err);
 
       });
-  
+
   }
-  
-  Makeinterface(a:number[],b:payoffType[],c:string,d:number,e:string) {
+
+  Makeinterface(a: number[], b: payoffType[], c: string, d: number, e: string) {
     this.pay.breakEvenPoints = a
     this.pay.payOffCoordinates = b;
     this.pay.tradeLoss = c;
@@ -88,7 +90,7 @@ export class UtilityService {
   //get dervivative result from backend
   getDerivatives(): void {
 
-    this.router.navigate(['/analysis'],{state:this.pay});
+    this.router.navigate(['/analysis'], { state: this.pay });
   }
 
   setIsLoggedIn() {

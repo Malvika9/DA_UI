@@ -2,7 +2,7 @@
   /*--------------------------------------------------------------
   # Top Bar
   --------------------------------------------------------------*/
-  #topbar {
+  /* #topbar {
     background: #fff;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
@@ -40,7 +40,7 @@
   #topbar .social-links a:hover {
     color: #428bca;
   }
-  
+   */
   /*--------------------------------------------------------------
   # Header
   --------------------------------------------------------------*/
@@ -82,7 +82,7 @@
   # Navigation Menu
   --------------------------------------------------------------*/
   /* Desktop Navigation */
-  .nav-menu, .nav-menu * {
+  /* .nav-menu, .nav-menu * {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -184,9 +184,9 @@
       content: "\ea9d";
     }
   }
-  
+   */
   /* Mobile Navigation */
-  .mobile-nav {
+  /* .mobile-nav {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -262,4 +262,4 @@
   .mobile-nav-active .mobile-nav-toggle i {
     color: #fff;
   }
-  
+   */

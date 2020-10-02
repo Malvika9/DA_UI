@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BackendDerivatives, payoffType } from 'src/derivatives';
+import { BackendDerivatives, derivatives, payoffType } from 'src/derivatives';
 import { CompanyselectionComponent } from '../companyselection/companyselection.component';
 import { UtilityService } from '../utility.service';
 
@@ -25,7 +25,7 @@ export class AnalysisComponent implements OnInit {
   margin: number = 0;
   bp : [] = []
   pc : payoffType[];
-
+  summaryValue : derivatives;
   isLoggedIn: boolean;
 
   loggedOut(){
@@ -42,7 +42,7 @@ export class AnalysisComponent implements OnInit {
     console.log("breakeven-points")
     console.log(this.bp)
     this.pc = history.state.payOffCoordinates
-
+    this.summaryValue = this.utility.summary
     console.log(this.pc)
 
     console.log("inside analysis")
