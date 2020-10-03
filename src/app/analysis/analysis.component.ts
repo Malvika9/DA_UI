@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BackendDerivatives, payoffType } from 'src/derivatives';
+import { BackendDerivatives, derivatives, payoffType } from 'src/derivatives';
 import { CompanyselectionComponent } from '../companyselection/companyselection.component';
 import { UtilityService } from '../utility.service';
 
@@ -19,7 +19,7 @@ export class AnalysisComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private utility: UtilityService) { }
 
   payOffResult: BackendDerivatives;
-
+  summaryValue:derivatives;
   NetLoss: string = '';
   NetProfit: string = '';
   margin: number = 0;
@@ -39,15 +39,10 @@ export class AnalysisComponent implements OnInit {
     this.NetProfit = history.state.tradeProfit;
     this.margin = history.state.tradeMargin;
     this.bp = history.state.breakEvenPoints;
-    console.log("breakeven-points")
-    console.log(this.bp)
+    
     this.pc = history.state.payOffCoordinates
-
-    console.log(this.pc)
-
-    console.log("inside analysis")
-    console.log(history.state.payOffCoordinates)
-
+this.summaryValue = this.utility.summary;
+ 
   }
 
   ngAfterViewInit() :void {

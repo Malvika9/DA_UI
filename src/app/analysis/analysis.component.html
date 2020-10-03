@@ -35,7 +35,25 @@
 
 
   <div class="container">
-
+    <p>Summary</p>
+    <div *ngFor=" let i of summaryValue.futuresTrade">
+      Futures :
+      Company Name: {{i.companyName}}<br>
+      Underlying Asset : {{i.underlyingAsset}}<br>
+      Market Position : {{i.futuresCat}}<br>
+      Lot Quantity : {{i.lotQuantity}}<br>
+      Futures Price : {{i.futuresPrice}}<br><br>
+    </div>
+    <div *ngFor=" let j of summaryValue.optionsTrade">
+      Ooptions
+      Company Name: {{j.companyName}}<br>
+      Underlying Asset : {{j.underlyingAsset}}<br>
+      Market Position : {{j.optionsCat}}<br>
+      Options Type : {{j.optionsType}}<br>
+      Lot Quantity : {{j.lotQuantity}}<br>
+      Strike Price : {{j.strikePrice}}<br>
+      Premium : {{j.premium}}<br><br>
+    </div>
     <!-- <label>Max Profit:&nbsp;</label>
         <label type="number" placeholder="0">{{NetProfit}}</label><br>
   
@@ -59,7 +77,9 @@
         <div class="card-body">
           <h4 class="card-title">Maximum Profit</h4>
           <h6 class="card-subtitle mb-2 text-muted">
-            <label type="number" placeholder="0"><h4><b>{{NetProfit}}</b></h4></label><br>
+            <label type="number" placeholder="0">
+              <h4><b>{{NetProfit}}</b></h4>
+            </label><br>
           </h6>
         </div>
       </div>
@@ -73,7 +93,9 @@
         <div class="card-body">
           <h4 class="card-title">Maximum Loss</h4>
           <h6 class="card-subtitle mb-2 text-muted">
-            <label type="number" placeholder="0" style="color: red;"><h4><b>{{NetLoss}}</b></h4></label><br>
+            <label type="number" placeholder="0" style="color: red;">
+              <h4><b>{{NetLoss}}</b></h4>
+            </label><br>
           </h6>
         </div>
       </div>
@@ -86,7 +108,9 @@
         <div class="card-body">
           <h4 class="card-title">Margin</h4>
           <h6 class="card-subtitle mb-2 text-muted">
-            <label type="number" placeholder="0"><h4><b>{{margin}}</b></h4></label><br>
+            <label type="number" placeholder="0">
+              <h4><b>{{margin}}</b></h4>
+            </label><br>
           </h6>
         </div>
       </div>
@@ -99,7 +123,9 @@
         <div class="card-body">
           <h4 class="card-title">BreakEven Points</h4>
           <h6 class="card-subtitle mb-2 text-muted">
-            <label type="number" placeholder="0" *ngFor="let i of bp"><h4><b>{{i}}&nbsp;&nbsp;</b></h4></label>
+            <label type="number" placeholder="0" *ngFor="let i of bp">
+              <h4><b>{{i}}&nbsp;&nbsp;</b></h4>
+            </label>
           </h6>
         </div>
       </div>

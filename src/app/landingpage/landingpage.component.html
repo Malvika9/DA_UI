@@ -36,16 +36,8 @@
           <div class="carousel-container">
             <div class="carousel-content container">
               <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Derian</span></h2>
-              <p class="animate__animated animate__fadeInUp">We provide you best derivative analysis services. Derian
-                provides solutions across asset classes, backed by a senior coverage team. Derian tries best to make
-                available practices to our clients to benefit from global expertise.</p>
-                <p>
-
-
-
-
-                  
-                </p>
+              <p class="animate__animated animate__fadeInUp">We provide you the best derivative analysis service. Derian
+                provides solution across asset classes, backed by a senior coverage team. Derian tries best to provide clients with the benefit of global expertise.</p>
               <!-- <a href="abc" class="" [routerLink]="['/login']"> Login to get Started</a> -->
               <button [routerLink]="['/login']" class="btn1"> LOGIN TO GET STARTED</button>
             </div>
@@ -236,26 +228,26 @@
           <form (submit)="submitQuery($event)" action="forms/contact.php" method="post" role="form" class="php-email-form">
             <div class="row">
               <div class="col-lg-6 form-group">
-                <input type="text" name="name" class="form-control" id="name" [(ngModel)]="QueryData.name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input style="border-radius:10px" type="text" name="name" class="form-control" id="name" [(ngModel)]="QueryData.name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validate"></div>
               </div>
               <div class="col-lg-6 form-group">
-                <input type="email" class="form-control" name="email" id="email" [(ngModel)]="QueryData.email"
+                <input  style="border-radius:10px" type="email" class="form-control" name="email" id="email" [(ngModel)]="QueryData.email"
                   placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                 <div class="validate"></div>
               </div>
               <div class="col-lg-6 form-group">
-                <input type="number" name="number" class="form-control" id="number" [(ngModel)]="QueryData.number" placeholder="Your Mobile No." data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input  style="border-radius:10px" type="number" name="number" class="form-control" id="number" [(ngModel)]="QueryData.number" placeholder="Your Mobile No." data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validate"></div>
               </div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" [(ngModel)]="QueryData.subject"
+              <input  style="border-radius:10px" type="text" class="form-control" name="subject" id="subject" [(ngModel)]="QueryData.subject"
                 placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
               <div class="validate"></div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required"
+              <textarea  style="border-radius:10px"  class="form-control" name="message" rows="5" data-rule="required"
                 data-msg="Please write something for us" [(ngModel)]="QueryData.message"
                 placeholder="Message"></textarea>
               <div class="validate"></div>

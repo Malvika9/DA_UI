@@ -41,6 +41,7 @@ export class UtilityService {
     tradeProfit: '',
   };
 
+  summary: derivatives;
   breakEvenPoints: Array<number>;
   payOffCoordinates: Array<payoffType>;
   tradeLoss: string;
@@ -51,6 +52,7 @@ export class UtilityService {
       .post('http://localhost:8080/trades/payoff', derivative)
       .subscribe(data => {
         // let breakEvenPoints: Array<number>;
+        this.summary = derivative;
         //@ts-ignore
         this.breakEvenPoints = data.breakEvenPoints
         //@ts-ignore

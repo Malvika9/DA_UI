@@ -10,7 +10,6 @@ import { LoginComponent } from './login/login.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { MenuComponent } from './menu/menu.component';
 import { CompanyselectionComponent } from './companyselection/companyselection.component';
-import { DerivativeselectionComponent } from './derivativeselection/derivativeselection.component';
 // import { HomePageComponent } from './home-page/home-page.component';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from '../../node_modules/primeng/button';
@@ -21,7 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { StepsModule } from 'primeng/steps';
 import { ToastModule } from 'primeng/toast';
-import { PayoffchartComponent } from './payoffchart/payoffchart.component';
 
 @NgModule({
   declarations: [
@@ -30,10 +28,10 @@ import { PayoffchartComponent } from './payoffchart/payoffchart.component';
     LandingpageComponent,
     MenuComponent,
     CompanyselectionComponent,
-    DerivativeselectionComponent,
+
     AnalysisComponent,
-    MainComponent,
-    PayoffchartComponent,
+    MainComponent
+
     // HomePageComponent
   ],
   imports: [
